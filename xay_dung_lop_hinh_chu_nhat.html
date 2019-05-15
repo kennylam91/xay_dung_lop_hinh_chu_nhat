@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lop hinh chu nhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200px" height="200px"></canvas>
+<script>
+    let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+        this.getS = function () {
+            return this.width * this.height;
+        };
+        this.getP = function () {
+            return 2 * this.width * this.height;
+        };
+        this.draw = function () {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.strokeRect(0, 0, this.width, this.height);
+        };
+    };
+    let rectangle1 = new Rectangle(120, 170);
+    rectangle1.draw();
+    rectangle1.width = 100;
+    rectangle1.height = 150;
+    document.write(rectangle1.getS() + " " + rectangle1.getP());
+
+</script>
+</body>
+</html>
